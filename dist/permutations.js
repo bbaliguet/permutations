@@ -89,6 +89,11 @@
 		};
 	};
 
+	// requirejs style
+	if (typeof define === 'function') {
+		exports = {};
+	}
+
 	// API
 	exports.all = all;
 	exports.generator = function(elements, size) {
@@ -104,4 +109,9 @@
 		};
 	};
 
-}(typeof exports === 'object' && exports || this));
+	// requirejs style
+	if (typeof define === 'function') {
+		define(exports);
+	}
+
+}(typeof exports === 'object' && exports || (this.permutations = {}, this.permutations)));

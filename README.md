@@ -1,6 +1,6 @@
 # permutations
 
-The best project ever.
+Permutation utils. Get all permutations on element of a list, get a generator for these permutations. 
 
 ## Getting Started
 ### On the server
