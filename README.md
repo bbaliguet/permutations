@@ -8,7 +8,7 @@ Install the module with: `npm install permutations`
 
 ```javascript
 var permutations = require('permutations');
-permutations.awesome(); // "awesome"
+permutations.all([1,2],3);
 ```
 
 ### In the browser
@@ -22,27 +22,13 @@ In your web page:
 ```html
 <script src="dist/permutations.min.js"></script>
 <script>
-awesome(); // "awesome"
-</script>
-```
-
-In your code, you can attach permutations's methods to any object.
-
-```html
-<script>
-var exports = Bocoup.utils;
-</script>
-<script src="dist/permutations.min.js"></script>
-<script>
-Bocoup.utils.awesome(); // "awesome"
+permutations.all([1,2],3);
 </script>
 ```
 
 ## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
+### .all(elements, size)
+### .generator(elements, size)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
