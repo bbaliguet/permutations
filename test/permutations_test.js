@@ -43,5 +43,15 @@ exports['awesome'] = {
       [null, null, 2, 1]
     ]);
     test.done();
+  },
+  'generator': function(test) {
+    var all = permutations.all([1, 2], 4),
+      generator = permutations.generator([1, 2], 4);
+    for (var i = 0, l = all.length; i < l; i++) {
+      test.deepEqual(all[i], generator.next());
+    }
+    // this should loop
+    test.deepEqual(all[0], generator.next());
+    test.done();
   }
 };

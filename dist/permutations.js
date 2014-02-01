@@ -41,13 +41,13 @@
 				start = copy.splice(i, 1)[0];
 			generators.push({
 				start: start,
-				tail: _generator(copy, size - 1)
+				tail: _generator(copy, size - 1).next
 			});
 		}
 		if (elements.length < size) {
 			generators.push({
 				start: null,
-				tail: _generator(elements.slice(), size - 1)
+				tail: _generator(elements.slice(), size - 1).next
 			});
 		}
 		var nbGen = generators.length;
@@ -62,7 +62,7 @@
 					};
 				}
 				var generator = generators[index],
-					permutationResult = generator.next(),
+					permutationResult = generator.tail(),
 					permutation = permutationResult.permutation;
 				permutation.unshift(generator.start);
 				result.permutation = permutation;
