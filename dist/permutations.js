@@ -1,4 +1,4 @@
-/*! permutations - v0.1.0 - 2014-02-01
+/*! permutations - v0.1.0 - 2014-02-02
 * https://github.com/benoit/permutations
 * Copyright (c) 2014 Benoît Baliguet; Licensed MIT */
 (function(exports) {
@@ -41,13 +41,13 @@
 				start = copy.splice(i, 1)[0];
 			generators.push({
 				start: start,
-				tail: _generator(copy, size - 1).next
+				tail: copy
 			});
 		}
 		if (elements.length < size) {
 			generators.push({
 				start: null,
-				tail: _generator(elements.slice(), size - 1).next
+				tail: elements.slice()
 			});
 		}
 		var nbGen = generators.length;
@@ -73,7 +73,13 @@
 					index = 0;
 				}
 				var generator = generators[index],
-					permutationResult = generator.tail(skip - 1),
+					next = generator.next;
+				// build generator if it does not exists yet
+				if (!next) {
+					next = _generator(generator.tail, size - 1).next;
+					generator.next = next;
+				}
+				var permutationResult = next(skip - 1),
 					permutation = permutationResult.permutation;
 				permutation.unshift(generator.start);
 				result.permutation = permutation;
