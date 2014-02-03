@@ -1,5 +1,5 @@
-/*! permutations - v0.1.0 - 2014-02-02
-* https://github.com/benoit/permutations
+/*! permutations - v0.1.0 - 2014-02-03
+* https://github.com/bbaliguet/permutations
 * Copyright (c) 2014 Benoît Baliguet; Licensed MIT */
 (function(exports) {
 
