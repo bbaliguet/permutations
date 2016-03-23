@@ -3,15 +3,6 @@
 Permutation utils. Get all permutations on element of a list, get a generator for these permutations. 
 
 ## Getting Started
-### On the server
-Install the module with: `npm install permutations`
-
-```javascript
-var permutations = require('permutations');
-permutations.all([1,2],3);
-```
-
-### In the browser
 Download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/benoit/permutations/master/dist/permutations.min.js
